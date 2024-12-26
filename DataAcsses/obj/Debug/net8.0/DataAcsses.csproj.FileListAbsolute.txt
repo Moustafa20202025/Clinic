@@ -1,0 +1,17 @@
+C:\Users\pc\source\repos\AppDoctorClinic\DataAcsses\bin\Debug\net8.0\DataAcsses.deps.json
+C:\Users\pc\source\repos\AppDoctorClinic\DataAcsses\bin\Debug\net8.0\DataAcsses.runtimeconfig.json
+C:\Users\pc\source\repos\AppDoctorClinic\DataAcsses\bin\Debug\net8.0\DataAcsses.dll
+C:\Users\pc\source\repos\AppDoctorClinic\DataAcsses\bin\Debug\net8.0\DataAcsses.pdb
+C:\Users\pc\source\repos\AppDoctorClinic\DataAcsses\bin\Debug\net8.0\ClinicModels.dll
+C:\Users\pc\source\repos\AppDoctorClinic\DataAcsses\bin\Debug\net8.0\ClinicModels.pdb
+C:\Users\pc\source\repos\AppDoctorClinic\DataAcsses\obj\Debug\net8.0\DataAcsses.csproj.AssemblyReference.cache
+C:\Users\pc\source\repos\AppDoctorClinic\DataAcsses\obj\Debug\net8.0\DataAcsses.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\source\repos\AppDoctorClinic\DataAcsses\obj\Debug\net8.0\DataAcsses.AssemblyInfoInputs.cache
+C:\Users\pc\source\repos\AppDoctorClinic\DataAcsses\obj\Debug\net8.0\DataAcsses.AssemblyInfo.cs
+C:\Users\pc\source\repos\AppDoctorClinic\DataAcsses\obj\Debug\net8.0\DataAcsses.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\AppDoctorClinic\DataAcsses\obj\Debug\net8.0\DataAcsses.csproj.Up2Date
+C:\Users\pc\source\repos\AppDoctorClinic\DataAcsses\obj\Debug\net8.0\DataAcsses.dll
+C:\Users\pc\source\repos\AppDoctorClinic\DataAcsses\obj\Debug\net8.0\refint\DataAcsses.dll
+C:\Users\pc\source\repos\AppDoctorClinic\DataAcsses\obj\Debug\net8.0\DataAcsses.pdb
+C:\Users\pc\source\repos\AppDoctorClinic\DataAcsses\obj\Debug\net8.0\DataAcsses.genruntimeconfig.cache
+C:\Users\pc\source\repos\AppDoctorClinic\DataAcsses\obj\Debug\net8.0\ref\DataAcsses.dll
