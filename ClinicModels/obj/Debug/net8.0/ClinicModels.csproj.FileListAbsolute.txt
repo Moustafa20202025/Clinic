@@ -1,0 +1,12 @@
+C:\Users\pc\source\repos\AppDoctorClinic\ClinicModels\bin\Debug\net8.0\ClinicModels.deps.json
+C:\Users\pc\source\repos\AppDoctorClinic\ClinicModels\bin\Debug\net8.0\ClinicModels.dll
+C:\Users\pc\source\repos\AppDoctorClinic\ClinicModels\bin\Debug\net8.0\ClinicModels.pdb
+C:\Users\pc\source\repos\AppDoctorClinic\ClinicModels\obj\Debug\net8.0\ClinicModels.csproj.AssemblyReference.cache
+C:\Users\pc\source\repos\AppDoctorClinic\ClinicModels\obj\Debug\net8.0\ClinicModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\source\repos\AppDoctorClinic\ClinicModels\obj\Debug\net8.0\ClinicModels.AssemblyInfoInputs.cache
+C:\Users\pc\source\repos\AppDoctorClinic\ClinicModels\obj\Debug\net8.0\ClinicModels.AssemblyInfo.cs
+C:\Users\pc\source\repos\AppDoctorClinic\ClinicModels\obj\Debug\net8.0\ClinicModels.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\AppDoctorClinic\ClinicModels\obj\Debug\net8.0\ClinicModels.dll
+C:\Users\pc\source\repos\AppDoctorClinic\ClinicModels\obj\Debug\net8.0\refint\ClinicModels.dll
+C:\Users\pc\source\repos\AppDoctorClinic\ClinicModels\obj\Debug\net8.0\ClinicModels.pdb
+C:\Users\pc\source\repos\AppDoctorClinic\ClinicModels\obj\Debug\net8.0\ref\ClinicModels.dll
