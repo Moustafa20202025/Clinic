@@ -1,0 +1,90 @@
+﻿@model PrescriptionEdit
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>UpDate Prescription</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#patientSelect').select2();
+            $('#doctorSelect').select2();
+        });
+    </script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Create Prescription</h1>
+        <form method="post" asp-controller="Prescription" asp-action="Edit">
+            <input asp-for="Id" hidden />
+            <div class="border p-3 mt-4">
+                <div class="row pb-2">
+                    <h2 class="text-primary">UpDate New Prescription</h2>
+                    <hr />
+                </div>
+
+                @*<div asp-validation-summary="ModelOnly"></div>*@
+
+                <div class="mb-3 row p-1">
+                    <label asp-for="PatientId" class="p-0">Patient Name</label>
+                    <select id="patientSelect" asp-for="PatientId" class="form-control" asp-items="@(IEnumerable<SelectListItem>)ViewBag.patientList"></select>
+                    <span asp-validation-for="PatientId" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 row p-1">
+                    <label asp-for="DoctorId" class="p-0">Doctor Name</label>
+                    <select id="doctorSelect" asp-for="DoctorId" class="form-control" asp-items="@(IEnumerable<SelectListItem>)ViewBag.doctorList"></select>
+                    <span asp-validation-for="DoctorId" class="text-danger"></span>
+                </div>
+
+
+
+                <div class="mb-3 row p-1">
+                    <label asp-for="DrugName" class="p-0"></label>
+                    <input asp-for="DrugName" class="form-control" />
+                    <span asp-validation-for="DrugName" class="text-danger"></span>
+
+                </div>
+                <div class="mb-3 row p-1">
+                    <label asp-for="DosageDescription" class="p-0"></label>
+                    <input asp-for="DosageDescription" class="form-control" />
+                    <span asp-validation-for="DosageDescription" class="text-danger"></span>
+
+                </div>
+                <div class="mb-3 row p-1">
+                    <label asp-for="DateOfConsultation" class="p-0"></label>
+                    <input asp-for="DateOfConsultation" class="form-control" />
+                    <span asp-validation-for="DateOfConsultation" class="text-danger"></span>
+
+                </div>
+
+
+
+
+                <div class="row">
+                    <div class="col-6 col-md-3">
+                        <button type="submit" class="btn btn-primary from-control">Update</button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a asp-controller="Prescription" asp-action="Index" class="btn btn-secondary border from-control">
+                            Back to list
+                        </a>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+@section Scripts {
+    @{
+        <partail name="_ValidationScriptsPartial" />
+    }
+}
+

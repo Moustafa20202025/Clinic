@@ -1,0 +1,87 @@
+﻿@model ClinicStoreVM
+
+<div class="card shadow-border-0 mt-4">
+    <div class="card-header bg-body-secondary bg-gradient m-lg-0 py-3">
+        <div class="row">
+            <div class="col-12 test-center">
+                <h2 class="text-primary py-2">Clinic Store</h2>
+            </div>
+        </div>
+        <div class="card-body p-4">
+        </div>
+    </div>
+
+</div>
+<form method="post" asp-controller="ClinicStore" asp-action="Upsert">
+    <input asp-for="clinicstore.Id" hidden />
+
+    <div class="border p-3 mt-4">
+        <div class="col-12 text-center">
+            <h2 class="text-primary py-2"> @(Model.clinicstore.Id != 0 ? "Update" : "Create") Clinic Store</h2>
+        </div>
+
+        @*<div asp-validation-summary="ModelOnly"></div>*@
+        
+        <div class="mb-3 row p-1">
+            <label asp-for="clinicstore.InstrumentName" class="p-0"></label>
+            <input asp-for="clinicstore.InstrumentName" class="form-control" />
+            <span asp-validation-for="clinicstore.InstrumentName" class="text-danger"></span>
+        </div>
+
+
+        <div class="mb-3 row p-1">
+            <label asp-for="clinicstore.Quantity" class="p-0"></label>
+            <input asp-for="clinicstore.Quantity" class="form-control" />
+            <span asp-validation-for="clinicstore.Quantity" class="text-danger"></span>
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="clinicstore.DateAdded" class="p-0"></label>
+            <input asp-for="clinicstore.DateAdded" class="form-control" />
+            <span asp-validation-for="clinicstore.DateAdded" class="text-danger"></span>
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="clinicstore.ExpiryDate" class="p-0"></label>
+            <input asp-for="clinicstore.ExpiryDate" class="form-control" />
+            <span asp-validation-for="clinicstore.ExpiryDate" class="text-danger"></span>
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label class="p-0">Name Of Clinic</label>
+            <select asp-for="@Model.clinicstore.ClinicId" asp-items="@Model.clinicstoreList" class="p-0">
+                <option>--Select The Clinic--</option>
+            </select>
+
+            <span asp-validation-for="clinicstore.ClinicId" class="text-danger"></span>
+        </div>
+
+
+        <div class="row pt-2">
+            <div class="col-6 col-md-3">
+                @if (Model.clinicstore.Id != 0)
+                {
+                    <button type="submit" class="btn btn-primary from-control">Update</button>
+                }
+                else
+                {
+                    <button type="submit" class="btn btn-primary from-control">Create</button>
+                }
+            </div>
+
+            <div class="col-6 col-md-3">
+                <a asp-controller="ClinicStore" asp-action="Index" class="btn btn-secondary border from-control">
+                    Back to list
+                </a>
+            </div>
+        </div>
+
+
+
+    </div>
+</form>
+@section Scripts {
+    @{
+        <partail name="_ValidationScriptsPartial" />
+    }
+}

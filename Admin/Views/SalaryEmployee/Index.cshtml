@@ -1,0 +1,85 @@
+﻿@model X.PagedList.IPagedList<SalaryEmployee>
+@using X.PagedList.Mvc.Core
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Salary Employee List</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function () {
+                $(".alert-success").fadeOut("slow");
+            }, 2000);
+        });
+    </script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Salary Employee List</h1>
+
+        @if (TempData["success"] != null)
+        {
+            <div class="alert alert-success">@TempData["success"]</div>
+        }
+
+        <form method="get" action="/SalaryEmployee/Index">
+            <div class="form-group">
+                <input type="text" name="searchString" class="form-control" placeholder="Search..." value="@Context.Request.Query["searchString"]" />
+                <button type="submit" class="btn btn-primary mt-2">Search</button>
+            </div>
+        </form>
+
+        <div class="d-flex justify-content-end mb-3">
+            <a asp-action="Create" class="btn btn-primary">Create New Salary Employee</a>
+        </div>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Base Salary</th>
+                    <th>Deductions</th>
+                    <th>Bonuses</th>
+                    <th>Net Salary</th>
+                    <th>Payment Date</th>
+                    <th>Payment Status</th>
+                    <th>Remarks</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model.OrderBy(u => u.Id))
+                {
+                    <tr>
+                        <td>@obj.clinicEmployee.FirstName @obj.clinicEmployee.LastName</td>
+                        <td>@obj.BaseSalary</td>
+                        <td>@obj.Deductions</td>
+                        <td>@obj.Bonuses</td>
+                        <td>@obj.NetSalary</td>
+                        <td>@obj.PaymentDate.ToString("yyyy-MM-dd")</td>
+                        <td>@obj.PaymentStatus</td>
+                        <td>@obj.Remarks</td>
+                        <td>
+                            <div class="w-75 btn-group" role="group">
+                                <a asp-controller="SalaryEmployee" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
+                                    <i class="bi bi-pencil-square"></i> Edit
+                                </a>
+                                <a asp-controller="SalaryEmployee" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-danger mx-2">
+                                    <i class="bi bi-trash-fill"></i> Delete
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="d-flex justify-content-center">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+        </div>
+    </div>
+</body>
+</html>

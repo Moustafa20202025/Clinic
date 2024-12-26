@@ -1,0 +1,130 @@
+﻿@model PatientVM
+
+<div class="card shadow-border-0 mt-4">
+    <div class="card-header bg-body-secondary bg-gradient m-lg-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-bg-dark py-2"> @(Model.patient.Id != 0 ? "Update" : "Create")Patient</h2>
+            </div>
+        </div>
+        <div class="card-body p-4">
+        </div>
+    </div>
+
+</div>
+<form method="post" asp-controller="Patient" asp-action="Upsert">
+    <input asp-for="patient.Id" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Creat New Patient</h2>
+            <hr />
+        </div>
+
+        @*<div asp-validation-summary="ModelOnly"></div>*@
+        <div class="mb-3 row p-1">
+            <label asp-for="patient.FirstName" class="p-0"></label>
+            <input asp-for="patient.FirstName" class="form-control" />
+            <span asp-validation-for="patient.FirstName" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="patient.LastName" class="p-0"></label>
+            <input asp-for="patient.LastName" class="form-control" />
+            <span asp-validation-for="patient.LastName" class="text-danger"></span>
+        </div>
+
+
+        <div class="mb-3 row p-1">
+            <label asp-for="patient.DateOfBirth" class="p-0"></label>
+            <input asp-for="patient.DateOfBirth" class="form-control" />
+            <span asp-validation-for="patient.DateOfBirth" class="text-danger"></span>
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="patient.Phone" class="p-0"></label>
+            <input asp-for="patient.Phone" class="form-control" />
+            <span asp-validation-for="patient.Phone" class="text-danger"></span>
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="patient.Email" class="p-0"></label>
+            <input asp-for="patient.Email" class="form-control" />
+            <span asp-validation-for="patient.Email" class="text-danger"></span>
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="patient.Gender" class="p-0"></label>
+            <select asp-for="patient.Gender" class="form-control" asp-items="Model.GenderList"></select>
+            <span asp-validation-for="patient.Gender" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 row p-1">
+            <label asp-for="patient.BloodType" class="p-0"></label>
+            <input asp-for="patient.BloodType" class="form-control" />
+            <span asp-validation-for="patient.BloodType" class="text-danger"></span>
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="patient.Weight" class="p-0"></label>
+            <input asp-for="patient.Weight" class="form-control" />
+            <span asp-validation-for="patient.Weight" class="text-danger"></span>
+
+        </div>    
+        <div class="mb-3 row p-1">
+            <label asp-for="patient.Analysis" class="p-0"></label>
+            <input asp-for="patient.Analysis" class="form-control" />
+            <span asp-validation-for="patient.Analysis" class="text-danger"></span>
+
+        </div>  
+        <div class="mb-3 row p-1">
+            <label asp-for="patient.RequiredRays" class="p-0"></label>
+            <input asp-for="patient.RequiredRays" class="form-control" />
+            <span asp-validation-for="patient.RequiredRays" class="text-danger"></span>
+
+        </div>   
+        <div class="mb-3 row p-1">
+            <label asp-for="patient.DiseaseStatus" class="p-0"></label>
+            <input asp-for="patient.DiseaseStatus" class="form-control" />
+            <span asp-validation-for="patient.DiseaseStatus" class="text-danger"></span>
+
+        </div> 
+           
+        <div class="mb-3 row p-1">
+            <label asp-for="patient.PatientComplaint" class="p-0"></label>
+            <input asp-for="patient.PatientComplaint" class="form-control" />
+            <span asp-validation-for="patient.PatientComplaint" class="text-danger"></span>
+
+        </div> 
+           
+        <div class="mb-3 row p-1">
+            <label asp-for="patient.PatientDiagnosis" class="p-0"></label>
+            <input asp-for="patient.PatientDiagnosis" class="form-control" />
+            <span asp-validation-for="patient.PatientDiagnosis" class="text-danger"></span>
+
+        </div>
+        <div class="row pt-2">
+            <div class="col-6 col-md-3">
+                @if (Model.patient.Id != 0)
+                {
+                    <button type="submit" class="btn btn-primary from-control">Update</button>
+                }
+                else
+                {
+                    <button type="submit" class="btn btn-primary from-control">Create</button>
+                }
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="Patient" asp-action="Index" class="btn btn-secondary border from-control">
+                    Back to list
+                </a>
+            </div>
+        </div>
+
+
+
+    </div>
+</form>
+@section Scripts {
+    @{
+        <partail name="_ValidationScriptsPartial" />
+    }
+}

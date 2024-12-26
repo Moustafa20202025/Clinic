@@ -1,0 +1,98 @@
+﻿@model DoctorCreationVB
+
+<div class="card shadow-border-0 mt-4">
+    <div class="card-header bg-body-secondary bg-gradient m-lg-0 py-3">
+        <div class="row">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="text-bg-dark py-2">Doctor</h2>
+                </div>
+            </div>
+        </div>
+        <div class="card-body p-4">
+        </div>
+    </div>
+
+</div>
+<form method="post" asp-controller="Doctor" asp-action="Create" enctype="multipart/form-data">
+
+
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Create Doctor</h2>
+            <hr />
+        </div>
+
+        <div class="mb-3 row p-1">
+            <label asp-for="FirstName" class="p-0"></label>
+            <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 row p-1">
+            <label asp-for="LastName" class="p-0"></label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 row p-1">
+            <label asp-for="Specialty" class="p-0"></label>
+            <input asp-for="Specialty" class="form-control" />
+            <span asp-validation-for="Specialty" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 row p-1">
+            <label asp-for="Phone" class="p-0"></label>
+            <input asp-for="Phone" class="form-control" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 row p-1">
+            <label asp-for="Email" class="p-0"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 row p-1">
+            <label asp-for="Gender" class="p-0"></label>
+            <select asp-for="Gender" class="form-control" asp-items="@(IEnumerable<SelectListItem>)ViewBag.GenderList"></select>
+            <span asp-validation-for="Gender" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 row p-1">
+            <label asp-for="Qualifications" class="p-0"></label>
+            <textarea asp-for="Qualifications" class="form-control"></textarea>
+            <span asp-validation-for="Qualifications" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 row p-1">
+            <label asp-for="Experience" class="p-0"></label>
+            <textarea asp-for="Experience" class="form-control"></textarea>
+            <span asp-validation-for="Experience" class="text-danger"></span>
+        </div>
+
+        <div class="form-floating py-2 col-12">
+            <input type="file" asp-for="ImageUrl" name="file" class="form-control border-0 shadow" />
+            <label asp-for="ImageUrl" class="ms-2"></label>
+            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+        </div>
+
+        <div class="row pt-2">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-primary from-control">Create</button>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <a asp-controller="Doctor" asp-action="Index" class="btn btn-secondary border from-control">
+                    Back to list
+                </a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

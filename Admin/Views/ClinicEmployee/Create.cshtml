@@ -1,0 +1,83 @@
+﻿@model ClinicEmpolyeeCreation
+
+<div class="card shadow-border-0 mt-4">
+    <div class="card-header bg-body-secondary bg-gradient m-lg-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Clinic Employee</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form method="post" asp-controller="ClinicEmployee" asp-action="Create">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Create New Clinic Employee</h2>
+            <hr />
+        </div>
+
+        <div class="mb-3 row p-1">
+            <label asp-for="FirstName" class="p-0">First Name</label>
+            <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 row p-1">
+            <label asp-for="LastName" class="p-0">Last Name</label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 row p-1">
+            <label asp-for="Phone" class="p-0">Phone</label>
+            <input asp-for="Phone" class="form-control" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 row p-1">
+            <label asp-for="Email" class="p-0">Email</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 row p-1">
+            <label asp-for="ClinicId" class="p-0">Name Of Clinics</label>
+            <select asp-for="ClinicId" class="form-control" asp-items="@(IEnumerable<SelectListItem>)ViewBag.ClinicList">
+                <option value="">--Select Clinic--</option>
+            </select>
+            <span asp-validation-for="ClinicId" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 row p-1">
+            <label asp-for="Gender" class="p-0">Gender</label>
+            <select asp-for="Gender" class="form-control" asp-items="@(IEnumerable<SelectListItem>)ViewBag.GenderList">
+                <option value="">--Select Gender--</option>
+            </select>
+            <span asp-validation-for="Gender" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 row p-1">
+            <label asp-for="MaritalStatus" class="p-0">Marital Status</label>
+            <select asp-for="MaritalStatus" class="form-control" asp-items="@(IEnumerable<SelectListItem>)ViewBag.MaritalStatusList">
+                <option value="">--Select Marital Status--</option>
+            </select>
+            <span asp-validation-for="MaritalStatus" class="text-danger"></span>
+        </div>
+
+        <div class="row pt-2">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="ClinicEmployee" asp-action="Index" class="btn btn-secondary border">
+                    Back to list
+                </a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

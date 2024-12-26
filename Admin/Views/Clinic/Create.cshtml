@@ -1,0 +1,108 @@
+﻿@model ClinicCreation
+
+<div class="card shadow-border-0 mt-4">
+    <div class="card-header bg-body-secondary bg-gradient m-lg-0 py-3">
+        <div class="row">
+             <div class="col-12 text-center">
+                         <h2 class="text-white py-2">Clinic</h2>
+                     </div>
+        </div>
+        <div class="card-body p-4">
+        </div>
+    </div>
+
+</div>
+
+<form method="post" asp-controller="Clinic" asp-action="Create">
+    
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Create Clinic</h2>
+            <hr />
+        </div>
+    
+
+        @*<div asp-validation-summary="ModelOnly"></div>*@
+       
+        <div class="mb-3 row p-1">
+            <label asp-for="ClinicName" class="p-0"></label>
+                <input asp-for="ClinicName" class="form-control" />
+                <span asp-validation-for="ClinicName" class="text-danger"></span>
+        </div>
+        
+
+        <div class="mb-3 row p-1">
+            <label asp-for="Address" class="p-0"></label>
+            <input asp-for="Address" class="form-control" />
+            <span asp-validation-for="Address" class="text-danger"></span>
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Date" class="p-0"></label>
+            <input asp-for="Date" class="form-control" />
+            <span asp-validation-for="Date" class="text-danger"></span>
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="OpeningTime" class="p-0"></label>
+            <input asp-for="OpeningTime" class="form-control" />
+            <span asp-validation-for="OpeningTime" class="text-danger"></span>
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="ClosingTime" class="p-0"></label>
+            <input asp-for="ClosingTime" class="form-control" />
+            <span asp-validation-for="ClosingTime" class="text-danger"></span>
+
+        </div>
+        
+        <div class="mb-3 row p-1">
+            <label asp-for="Notes" class="p-0"></label>
+            <textarea asp-for="Notes" class="form-control"></textarea>
+            <span asp-validation-for="Notes" class="text-danger"></span>
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="WorkingDays" class="p-0"></label>
+            <input asp-for="WorkingDays" class="form-control" />
+            <span asp-validation-for="WorkingDays" class="text-danger"></span>
+
+        </div>
+       
+            <div class="mb-3 row p-1">
+                <label class ="p-0">Name Of Doctor</label>
+            <select asp-for="DoctorId" asp-items="@(IEnumerable<SelectListItem>)ViewBag.clinicList" class="p-0">
+                <option>--Select Doctor--</option>
+
+            </select>
+            
+            <span asp-validation-for="DoctorId" class="text-danger"></span>
+        </div>
+        
+
+
+        <div class="row pt-2">
+            <div class="col-6 col-md-3">
+             
+                
+                    <button type="submit" class="btn btn-primary from-control">Create</button>
+                
+            </div>
+
+            <div class="col-6 col-md-3">
+                <a asp-controller="Clinic" asp-action="Index" class="btn btn-secondary border from-control">
+                    Back to list
+                </a>
+            </div>
+        </div>
+       
+
+
+
+    </div>
+</form>
+@section Scripts {
+    @{
+        <partail name="_ValidationScriptsPartial" />
+    }
+}

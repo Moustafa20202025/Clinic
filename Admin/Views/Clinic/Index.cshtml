@@ -1,0 +1,86 @@
+﻿
+@model X.PagedList.IPagedList<Clinic>
+@using X.PagedList.Mvc.Core
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Clinic List</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function () {
+                $(".alert-success").fadeOut("slow");
+            }, 2000);
+            //2000ms = 2 seconds
+        });
+    </script>
+
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Clinic List</h1>
+
+        @if (TempData["success"] != null)
+        {
+            <div class="alert alert-success">@TempData["success"]</div>
+        }
+
+        <form method="get" action="/Admin/Clinic/Index">
+            <div class="form-group">
+                <input type="text" name="searchString" class="form-control" placeholder="Search..." value="@Context.Request.Query["searchString"]" />
+                <button type="submit" class="btn btn-primary mt-2">Search</button>
+            </div>
+        </form>
+
+        <div class="d-flex justify-content-end mb-3">
+            <a asp-action="Create" class="btn btn-primary">Create New Clinic</a>
+        </div>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ClinicName</th>
+                    <th>Address</th>
+                    <th>Date</th>
+                    <th>OpeningTime</th>
+                    <th>ClosingTime</th>
+                    <th>IsOpen</th>
+                    <th>doctorName</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var clinic in Model)
+                {
+                    <tr>
+                        <td>@clinic.ClinicName</td>
+                        <td>@clinic.Address</td>
+                        <td>@clinic.Date</td>
+                        <td>@clinic.OpeningTime</td>
+                        <td>@clinic.ClosingTime</td>
+                        <td>@clinic.IsOpen</td>
+                        <td>@clinic.doctor.FirstName @clinic.doctor.LastName</td>
+
+                        <td>
+                            <div class="w-75 btn-group" role="group">
+                                <a asp-controller="Clinic" asp-action="Edit" asp-route-id="@clinic.Id" class="btn btn-primary mx-2">
+                                    <i class="bi bi-pencil-square"></i> Edit
+                                </a>
+                                <a asp-controller="Clinic" asp-action="Delete" asp-route-id="@clinic.Id" class="btn btn-danger mx-2">
+                                    <i class="bi bi-trash-fill"></i> Delete
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="d-flex justify-content-center">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+        </div>
+    </div>
+</body>
+</html>
