@@ -1,0 +1,12 @@
+C:\Users\pc\source\repos\AppDoctorClinic\Utitiy\bin\Debug\net8.0\Utitiy.deps.json
+C:\Users\pc\source\repos\AppDoctorClinic\Utitiy\bin\Debug\net8.0\Utitiy.dll
+C:\Users\pc\source\repos\AppDoctorClinic\Utitiy\bin\Debug\net8.0\Utitiy.pdb
+C:\Users\pc\source\repos\AppDoctorClinic\Utitiy\obj\Debug\net8.0\Utitiy.csproj.AssemblyReference.cache
+C:\Users\pc\source\repos\AppDoctorClinic\Utitiy\obj\Debug\net8.0\Utitiy.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\source\repos\AppDoctorClinic\Utitiy\obj\Debug\net8.0\Utitiy.AssemblyInfoInputs.cache
+C:\Users\pc\source\repos\AppDoctorClinic\Utitiy\obj\Debug\net8.0\Utitiy.AssemblyInfo.cs
+C:\Users\pc\source\repos\AppDoctorClinic\Utitiy\obj\Debug\net8.0\Utitiy.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\AppDoctorClinic\Utitiy\obj\Debug\net8.0\Utitiy.dll
+C:\Users\pc\source\repos\AppDoctorClinic\Utitiy\obj\Debug\net8.0\refint\Utitiy.dll
+C:\Users\pc\source\repos\AppDoctorClinic\Utitiy\obj\Debug\net8.0\Utitiy.pdb
+C:\Users\pc\source\repos\AppDoctorClinic\Utitiy\obj\Debug\net8.0\ref\Utitiy.dll
